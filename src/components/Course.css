@@ -1,0 +1,22 @@
+.course {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 10px 5px;
+  /* width: 100vw; */
+  height: 20vh;
+  padding: 5px 10px;
+}
+
+.course:first-of-type, .course:last-of-type {
+  margin: 10px 0;
+}
+
+.course-top {
+  height: 15vh;
+}
+
+.course-header {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
