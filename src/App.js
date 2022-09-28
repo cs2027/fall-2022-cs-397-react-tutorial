@@ -1,5 +1,5 @@
 import Banner from './components/Banner';
-import CourseList from './components/CourseList';
+import TermPage from './components/TermPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useJsonQuery } from './utilities/fetch';
 import './App.css';
@@ -12,10 +12,12 @@ const Main = () => {
   if (error) return <h1>Error retrieving course data: {`${error}`}</h1>;
   if (isLoading) return <h1>Retrieving course data...</h1>;
 
-  return <div className="app-body">
+  return (
+    <div className="app-body">
       <Banner title={scheduleData.title} />
-      <CourseList courses={scheduleData.courses} />
-    </div>;
+      <TermPage courses={scheduleData.courses} />
+    </div>
+  );
 };
 
 const App = () => (
