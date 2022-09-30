@@ -1,0 +1,23 @@
+.course-plan-button {
+  display: flex;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  background-color: lightblue;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.course-plan-button:hover {
+  opacity: 0.9;
+}
+
+.course-plan-button:active {
+  opacity: 0.8;
+  box-shadow: 5px 5px 5px gray;
+}

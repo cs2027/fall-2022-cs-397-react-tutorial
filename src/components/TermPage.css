@@ -1,0 +1,10 @@
+.top-row-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur {
+  opacity: 0.3;
+  pointer-events: none;
+}
