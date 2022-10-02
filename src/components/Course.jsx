@@ -1,10 +1,10 @@
 import './Course.css';
 
-const Course = ({course, isSelected, toggleSelect}) => {
+const Course = ({course, isSelected, hasConflict, toggleSelect}) => {
 
   return (
     <div
-      className={isSelected ? "course course-selected" : "course"}
+      className={`course ${isSelected ? 'course-selected' : hasConflict ? 'course-conflict' : ''}`}
       onClick={() => toggleSelect(course)}
     >
       <div className="course-top">

@@ -30,11 +30,13 @@ const Main = () => {
         }
       }}
     >
-      <Banner title={scheduleData.title} />
+      <Banner
+        title={scheduleData.title}
+        open={open}
+      />
       <TermPage
         courses={scheduleData.courses}
         open={open}
-        setOpen={open}
         openModal={openModal}
         closeModal={closeModal}
       />

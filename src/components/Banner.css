@@ -1,3 +1,8 @@
 .banner-title {
   text-align: center;
 }
+
+.blur {
+  opacity: 0.3;
+  pointer-events: none;
+}

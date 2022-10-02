@@ -30,3 +30,8 @@
   font-weight: 500;
   margin-bottom: 10px;
 }
+
+.course-conflict {
+  background-color: rgba(255, 0, 0, 0.3);
+  pointer-events: none;
+}
