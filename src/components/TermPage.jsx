@@ -9,7 +9,7 @@ const TermPage = (
   { open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses }
 ) => {
   const [selectedTerm, setSelectedTerm] = useState("Fall");
-  const filteredCourses = Object.entries(courses).filter(course => selectedTerm === course[1].term);
+  const filteredCourses = courses.filter(course => course[1].term === selectedTerm);
   const terms = ["Fall", "Winter", "Spring"];
 
   return (

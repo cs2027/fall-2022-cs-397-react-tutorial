@@ -3,8 +3,8 @@ import TermPage from "./TermPage";
 
 const CourseListPage = (
   { title, open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses }
-) => (
-  <div
+) => {
+  return <div
     className="app-body"
     onClick={(e) => {
       if (open) {
@@ -31,6 +31,6 @@ const CourseListPage = (
       setConflictingCourses={setConflictingCourses}
     />
   </div>
-);
+};
 
 export default CourseListPage;
