@@ -17,3 +17,15 @@
   margin-top: 5px;
   padding: 0 10px;
 }
+
+.invalid-input-bar {
+  outline: 1px solid red;
+  box-shadow: 2px 2px 2px red;;
+}
+
+.invalid-input-msg {
+  color: red;
+  font-weight: 600;
+  margin-left: 5px;
+  margin-top: 5px;
+}
