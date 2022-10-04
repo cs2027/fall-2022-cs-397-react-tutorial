@@ -5,13 +5,12 @@ import Modal from './Modal';
 import CoursePlanButton from "./CoursePlanButton";
 import "./TermPage.css";
 
-const TermPage = ({courses, open, openModal, closeModal}) => {
+const TermPage = (
+  { open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses }
+) => {
   const [selectedTerm, setSelectedTerm] = useState("Fall");
   const filteredCourses = Object.entries(courses).filter(course => selectedTerm === course[1].term);
   const terms = ["Fall", "Winter", "Spring"];
-
-  const [selectedCourses, setSelectedCourses] = useState([]);
-  const [conflictingCourses, setConflictingCourses] = useState([]);
 
   return (
     <div>

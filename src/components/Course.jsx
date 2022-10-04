@@ -1,12 +1,26 @@
+import { Link } from 'react-router-dom';
 import './Course.css';
 
-const Course = ({course, isSelected, hasConflict, toggleSelect}) => {
-
+const Course = ({id, course, isSelected, hasConflict, toggleSelect}) => {
   return (
     <div
+      id={id}
       className={`course ${isSelected ? 'course-selected' : hasConflict ? 'course-conflict' : ''}`}
-      onClick={() => toggleSelect(course)}
+      onClick={(e) => {
+          if (e.target.id !== "edit-link") {
+            toggleSelect(course);
+          };
+        }
+      }
     >
+      <Link
+        id="edit-link"
+        className="edit-link"
+        to={`/editCourse/${id}`}
+        params={{ courseId: id, courseData: course }}
+      >
+        Edit
+      </Link>
       <div className="course-top">
         <div className="course-header">{course.term} CS {course.number}</div>
         <div>{course.title}</div>

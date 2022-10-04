@@ -1,5 +1,4 @@
 import './Modal.css';
-import Course from './Course';
 
 const Modal = ({ open, closeModal, selectedCourses }) => (
   <div
@@ -18,10 +17,7 @@ const Modal = ({ open, closeModal, selectedCourses }) => (
         selectedCourses.length === 0
         ? <h2>No courses selected. To select courses, exit the modal, select a term, and click on courses to add.</h2>
         : selectedCourses.map((course, id) => (
-          <Course
-            key={id}
-            course={course}
-          />
+          <li key={id}><b>{course.term} CS {course.number}</b>: {course.title} ({course.meets})</li>
         ))
       }
     </div>

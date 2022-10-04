@@ -44,6 +44,7 @@ const CourseList = (
         courses.map(([id, course]) => (
           <Course
             key={id}
+            id={id}
             course={course}
             isSelected={selectedCourses.includes(course)}
             hasConflict={conflictingCourses.includes(course)}
