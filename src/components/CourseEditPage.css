@@ -45,3 +45,8 @@
   background: green;
   color: white;
 }
+
+.button-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
