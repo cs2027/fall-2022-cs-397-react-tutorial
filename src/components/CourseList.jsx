@@ -7,7 +7,7 @@ import {
 } from '../utilities/courseConflict';
 
 const CourseList = (
-  {courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses}
+  {courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses, user}
 ) => {
   const toggleSelect = (course) => {
     const newCourse = !(selectedCourses.includes(course));
@@ -49,6 +49,7 @@ const CourseList = (
             isSelected={selectedCourses.includes(course)}
             hasConflict={conflictingCourses.includes(course)}
             toggleSelect={toggleSelect}
+            user={user}
           />
         ))
       }

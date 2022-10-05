@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { useEffect, useState, useCallback } from 'react';
 import { getDatabase, onValue, ref, update } from 'firebase/database';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDxjqsE4Q85sUuxInVtudz-MHcii9qq6AA",
@@ -45,4 +46,27 @@ export const useDbUpdate = (path) => {
   }, [path]);
 
   return [updateData, result];
+};
+
+export const signInWithGoogle = () => {
+  signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
+};
+
+const firebaseSignOut = () => {
+  signOut(getAuth(firebase));
+  if (window.location.pathname.includes("editCourse")) {
+    window.location.href = "/";
+  };
+};
+
+export { firebaseSignOut as signOut };
+
+export const useAuthState = () => {
+  const [user, setUser] = useState();
+
+  useEffect(() => (
+    onAuthStateChanged(getAuth(firebase), setUser)
+  ), []);
+
+  return [user];
 };

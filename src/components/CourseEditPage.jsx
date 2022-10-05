@@ -16,7 +16,11 @@ const validateUserData = (key, val) => {
   }
 };
 
-const CourseEditPage = ({courses}) => {
+const CourseEditPage = ({courses, user}) => {
+  if (!user) {
+    window.location.href = "/";
+  };
+
   const { courseId } = useParams();
   const courseData = Object.entries(courses).filter(course => course[0] === courseId)[0][1];
   const courseDataFormSubset = (({ title, meets }) => ({ title, meets }))(courseData);

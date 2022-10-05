@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Course.css';
 
-const Course = ({id, course, isSelected, hasConflict, toggleSelect}) => {
+const Course = ({id, course, isSelected, hasConflict, toggleSelect, user}) => {
   return (
     <div
       id={id}
@@ -13,14 +13,18 @@ const Course = ({id, course, isSelected, hasConflict, toggleSelect}) => {
         }
       }
     >
-      <Link
-        id="edit-link"
-        className="edit-link"
-        to={`/editCourse/${id}`}
-        params={{ courseId: id, courseData: course }}
-      >
-        Edit
-      </Link>
+      {
+        (user)
+        ? <Link
+            id="edit-link"
+            className="edit-link"
+            to={`/editCourse/${id}`}
+            params={{ courseId: id, courseData: course }}
+          >
+            Edit
+          </Link>
+        : <div />
+      }
       <div className="course-top">
         <div className="course-header">{course.term} CS {course.number}</div>
         <div>{course.title}</div>
