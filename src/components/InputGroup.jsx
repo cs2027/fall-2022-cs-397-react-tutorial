@@ -1,6 +1,6 @@
 import "./InputGroup.css";
 
-const InputGroup = ({keyName, label, state, change}) => (
+const InputGroup = ({ keyName, label, state, change }) => (
   <div className="input-group">
     <label className="input-label">{label}</label>
     <input

@@ -16,8 +16,8 @@ const validateUserData = (key, val) => {
   }
 };
 
-const CourseEditPage = ({courses, user}) => {
-  if (!user) {
+const CourseEditPage = ({ courses, profile }) => {
+  if (!profile?.isAdmin) {
     window.location.href = "/";
   };
 

@@ -1,7 +1,7 @@
 import TermButton from "./TermButton";
 import "./TermSelector.css";
 
-const TermSelector = ({terms, selectedTerm, setSelectedTerm}) => (
+const TermSelector = ({ terms, selectedTerm, setSelectedTerm }) => (
   <div className="term-button-select">
     {
       terms.map(term => (

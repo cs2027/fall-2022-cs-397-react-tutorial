@@ -6,7 +6,7 @@ import CoursePlanButton from "./CoursePlanButton";
 import "./TermPage.css";
 
 const TermPage = (
-  { open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses, user }
+  { open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses, profile }
 ) => {
   const [selectedTerm, setSelectedTerm] = useState("Fall");
   const filteredCourses = courses.filter(course => course[1].term === selectedTerm);
@@ -34,7 +34,7 @@ const TermPage = (
           setSelectedCourses={setSelectedCourses}
           conflictingCourses={conflictingCourses}
           setConflictingCourses={setConflictingCourses}
-          user={user}
+          profile={profile}
         />
       </div>
     </div>

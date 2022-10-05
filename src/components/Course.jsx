@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Course.css';
 
-const Course = ({id, course, isSelected, hasConflict, toggleSelect, user}) => {
+const Course = ({ id, course, isSelected, hasConflict, toggleSelect, profile }) => {
   return (
     <div
       id={id}
@@ -14,7 +14,7 @@ const Course = ({id, course, isSelected, hasConflict, toggleSelect, user}) => {
       }
     >
       {
-        (user)
+        (profile?.isAdmin)
         ? <Link
             id="edit-link"
             className="edit-link"

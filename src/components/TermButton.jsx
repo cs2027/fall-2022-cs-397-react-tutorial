@@ -1,4 +1,4 @@
-const TermButton = ({term, selectedTerm, setSelectedTerm}) => (
+const TermButton = ({ term, selectedTerm, setSelectedTerm }) => (
   <div>
     <input
       id={term}

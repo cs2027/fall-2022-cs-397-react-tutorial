@@ -2,7 +2,7 @@ import Banner from "./Banner";
 import TermPage from "./TermPage";
 
 const CourseListPage = (
-  { title, open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses, user }
+  { title, open, openModal, closeModal, courses, selectedCourses, setSelectedCourses, conflictingCourses, setConflictingCourses, profile }
 ) => {
   return <div
     className="app-body"
@@ -29,7 +29,7 @@ const CourseListPage = (
       setSelectedCourses={setSelectedCourses}
       conflictingCourses={conflictingCourses}
       setConflictingCourses={setConflictingCourses}
-      user={user}
+      profile={profile}
     />
   </div>
 };

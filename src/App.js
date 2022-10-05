@@ -5,6 +5,7 @@ import CourseEditPage from "./components/CourseEditPage";
 import AuthButton from "./components/AuthButton";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useDbData, useAuthState } from "./utilities/firebase";
+import { useProfile } from './utilities/profile';
 import './App.css';
 
 const queryClient = new QueryClient();
@@ -20,9 +21,15 @@ const Main = () => {
 
   const [user] = useAuthState();
 
+  const [profile, profileLoading, profileError] = useProfile();
+
   if (error) return <h1>Error loading data: {error.toString()}</h1>;
   if (data === undefined) return <h1>Loading data...</h1>;
   if (!data) return <h1>No data found</h1>;
+
+  if (profileError) return <h1>Error loading profile: {`${profileError}`}</h1>;
+  if (profileLoading) return <h1>Loading user profile</h1>;
+  if (!profile) return <h1>No profile data</h1>;
 
   const courses = Object.entries(data.courses);
 
@@ -44,9 +51,10 @@ const Main = () => {
                       conflictingCourses={conflictingCourses}
                       setConflictingCourses={setConflictingCourses}
                       user={user}
+                      profile={profile}
                     />}
           />
-          <Route path="/editCourse/:courseId" element={<CourseEditPage courses={data.courses} user={user}/>}/>
+          <Route path="/editCourse/:courseId" element={<CourseEditPage courses={data.courses} profile={profile}/>}/>
         </Routes>
       </BrowserRouter>
     </div>
