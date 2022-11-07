@@ -6,7 +6,7 @@ const TermButton = ({ term, selectedTerm, setSelectedTerm }) => (
       checked={term === selectedTerm}
       onChange={() => setSelectedTerm(term)}
     />
-    <label htmlFor={term}>
+    <label htmlFor={term} data-cy={term}>
       { term }
     </label>
   </div>

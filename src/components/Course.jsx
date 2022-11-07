@@ -12,6 +12,7 @@ const Course = ({ id, course, isSelected, hasConflict, toggleSelect, profile }) 
           };
         }
       }
+      data-cy="course"
     >
       {
         (profile?.isAdmin)
