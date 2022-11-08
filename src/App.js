@@ -33,6 +33,8 @@ const Main = () => {
 
   const courses = Object.entries(data.courses);
 
+  console.log(data.title)
+
   return (
     <div className="app-body">
       <AuthButton open={open} user={user}/>
