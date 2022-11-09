@@ -6,7 +6,7 @@ import { connectAuthEmulator, signInWithCredential, getAuth, GoogleAuthProvider,
 const firebaseConfig = {
   apiKey: "AIzaSyDxjqsE4Q85sUuxInVtudz-MHcii9qq6AA",
   authDomain: "cs-397-react-tutorial.firebaseapp.com",
-  databaseURL: "https://cs-397-react-tutorial-default-rtdb.firebaseio.com",
+  databaseURL: "https://cs-397-react-tutorial.firebaseio.com",
   projectId: "cs-397-react-tutorial",
   storageBucket: "cs-397-react-tutorial.appspot.com",
   messagingSenderId: "615413121105",
@@ -21,13 +21,9 @@ if (process.env.REACT_APP_EMULATE) {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
   connectDatabaseEmulator(database, "127.0.0.1", 9000);
 
-  console.log(auth)
-  console.log(database)
-  console.log("HELLO????")
-
-  // signInWithCredential(auth, GoogleAuthProvider.credential(
-  //   '{"sub": "dc408DAXfZ38GcpQBDang7xcpjJR", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
-  // ));
+  signInWithCredential(auth, GoogleAuthProvider.credential(
+    '{"sub": "dc408DAXfZ38GcpQBDang7xcpjJR", "email": "tester@gmail.com", "displayName":"Test User", "email_verified": true}'
+  ));
 }
 
 export const useDbData = (path) => {
